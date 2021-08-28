@@ -30,6 +30,7 @@ public class RobotContainer {
     controller = new XboxController(0);
     autoCommand = new TimedDriveCommand(driveSubsystem);
     teleopCommand = new JoystickDriveCommand(driveSubsystem, controller);
+    driveSubsystem.setDefaultCommand(teleopCommand);
     // Configure the button bindings
   }
 

@@ -5,8 +5,21 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.Spark;
 
 public class DriveSubsystem extends SubsystemBase {
+  Spark leftMotor;
+  Spark rightMotor;
+
   /** Creates a new ExampleSubsystem. */
-  public DriveSubsystem() {}
+  public DriveSubsystem() {
+    leftMotor = new Spark(0);
+    rightMotor = new Spark(1);
+  }
+
+  public void Drive(double leftSpeed, double rightSpeed) {
+    leftMotor.set(leftSpeed);
+    rightMotor.set(rightSpeed * -1);
+  }
+
 }
